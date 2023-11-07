@@ -1,4 +1,11 @@
-FROM openjdk:21
-COPY ./out/production/test_java/ /tmp
+FROM openjdk:21 AS builder
+
+COPY ./src/ /tmp/src
 WORKDIR /tmp
-ENTRYPOINT ["java","com.exmaple.test.Test"]
+RUN javac -d ./out ./src/com/exmaple/test/* -Xlint:deprecation
+
+FROM builder AS runner
+COPY --from=builder /tmp/out /tmp/out
+WORKDIR /tmp/out
+
+ENTRYPOINT ["java", "com.exmaple.test.Test"]
