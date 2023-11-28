@@ -1,4 +1,4 @@
-package com.exmaple.test;
+package it.unifi.weatherapp;
 
 public class Test {
     public static void main(String[] args) {

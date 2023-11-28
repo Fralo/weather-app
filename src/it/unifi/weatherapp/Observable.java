@@ -1,4 +1,4 @@
-package com.exmaple.test;
+package it.unifi.weatherapp;
 
 import java.util.ArrayList;
 import java.util.List;

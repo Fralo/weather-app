@@ -1,4 +1,4 @@
-package com.exmaple.test;
+package it.unifi.weatherapp;
 
 public class Sensor extends Observable {
 
