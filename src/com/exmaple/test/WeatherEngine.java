@@ -1,9 +1,6 @@
 package com.exmaple.test;
 
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
-
 public class WeatherEngine implements Observer {
 
     final static double BIG_TEMPERATURE_DELTA = 10;
@@ -31,12 +28,12 @@ public class WeatherEngine implements Observer {
 
         double oldTemperature = this.temperature;
 
-        if(o instanceof Sensor s) {
+        if (o instanceof Sensor s) {
             this.setTemperature(s.getTemperature());
         }
 
         this.writeData();
-        if(this.isBigChange(oldTemperature, this.temperature)) {
+        if (this.isBigChange(oldTemperature, this.temperature)) {
             this.notifyUsers();
         }
     }
@@ -46,7 +43,7 @@ public class WeatherEngine implements Observer {
     }
 
     public void notifyUsers() {
-        for(UserNotificationChannel unc : this.usersChannels) {
+        for (UserNotificationChannel unc : this.usersChannels) {
             unc.notify(this.getTemperatureString());
         }
     }

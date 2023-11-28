@@ -1,7 +1,5 @@
 package com.exmaple.test;
 
-import java.util.Observable;
-
 public class Sensor extends Observable {
 
     private double temperature;
@@ -15,7 +13,6 @@ public class Sensor extends Observable {
             return;
         }
         this.temperature = temperature;
-        this.setChanged();
         this.notifyObservers(this);
     }
 
