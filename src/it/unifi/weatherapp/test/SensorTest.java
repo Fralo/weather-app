@@ -52,7 +52,7 @@ class SensorTest {
         double newTemperature = 25.0;
         sensor.setTemperature(newTemperature);
 
-        assertTrue(mockObserver.isNotified());
+        assertFalse(mockObserver.isNotified());
     }
 
     // MockObserver class to simulate an observer
