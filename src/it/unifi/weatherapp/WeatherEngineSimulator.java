@@ -1,6 +1,6 @@
 package it.unifi.weatherapp;
 
-public class Test {
+public class WeatherEngineSimulator {
     public static void main(String[] args) {
 
         Sensor s = new Sensor(23.3);

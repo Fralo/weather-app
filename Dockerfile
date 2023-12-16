@@ -8,4 +8,4 @@ FROM builder AS runner
 COPY --from=builder /tmp/out /tmp/out
 WORKDIR /tmp/out
 
-ENTRYPOINT ["java", "it.unifi.weatherapp.Test"]
+ENTRYPOINT ["java", "it.unifi.weatherapp.WeatherEngineSimulator"]
